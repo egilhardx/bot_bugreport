@@ -82,6 +82,10 @@ async def send_bug_report(player_name: str, file_path: str):
 # ==============================
 # ROTA FLASK
 # ==============================
+@app.route("/")
+def home():
+    return "Bot online", 200
+
 @app.route("/send_log", methods=["POST"])
 def receive_log():
     data = request.json
